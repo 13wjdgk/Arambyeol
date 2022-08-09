@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A66D5F5A28A2C090007D51B0 /* MenuSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D5F5928A2C090007D51B0 /* MenuSwiftUIView.swift */; };
 		A66F2BBA2896BC1A00C6AB3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BB92896BC1A00C6AB3E /* ContentView.swift */; };
 		A66F2BBC2896BC7700C6AB3E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BBB2896BC7700C6AB3E /* PostView.swift */; };
 		A66F2BBE2896BCB200C6AB3E /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BBD2896BCB200C6AB3E /* MypageView.swift */; };
 		A66F2BC02896CB2F00C6AB3E /* breakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BBF2896CB2F00C6AB3E /* breakfastView.swift */; };
+		A6B0897428A1456F0093D627 /* exSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B0897328A1456F0093D627 /* exSwiftUIView.swift */; };
 		A6D4419928927EBD0084AF8A /* ArambyeolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */; };
 		A6D4419D28927EBE0084AF8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D4419C28927EBE0084AF8A /* Assets.xcassets */; };
 		A6D441A028927EBE0084AF8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D4419F28927EBE0084AF8A /* Preview Assets.xcassets */; };
@@ -40,10 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A66D5F5928A2C090007D51B0 /* MenuSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSwiftUIView.swift; sourceTree = "<group>"; };
 		A66F2BB92896BC1A00C6AB3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A66F2BBB2896BC7700C6AB3E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		A66F2BBD2896BCB200C6AB3E /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
 		A66F2BBF2896CB2F00C6AB3E /* breakfastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = breakfastView.swift; sourceTree = "<group>"; };
+		A6B0897328A1456F0093D627 /* exSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exSwiftUIView.swift; sourceTree = "<group>"; };
 		A6D4419528927EBD0084AF8A /* Arambyeol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arambyeol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArambyeolApp.swift; sourceTree = "<group>"; };
 		A6D4419C28927EBE0084AF8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				A66F2BB92896BC1A00C6AB3E /* ContentView.swift */,
 				A6D441A328927EBE0084AF8A /* Arambyeol.xcdatamodeld */,
 				A6D4419E28927EBE0084AF8A /* Preview Content */,
+				A6B0897328A1456F0093D627 /* exSwiftUIView.swift */,
 			);
 			path = Arambyeol;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				A66F2BBB2896BC7700C6AB3E /* PostView.swift */,
 				A66F2BBD2896BCB200C6AB3E /* MypageView.swift */,
 				A66F2BBF2896CB2F00C6AB3E /* breakfastView.swift */,
+				A66D5F5928A2C090007D51B0 /* MenuSwiftUIView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -276,7 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6D441A228927EBE0084AF8A /* Persistence.swift in Sources */,
+				A6B0897428A1456F0093D627 /* exSwiftUIView.swift in Sources */,
 				A66F2BBA2896BC1A00C6AB3E /* ContentView.swift in Sources */,
+				A66D5F5A28A2C090007D51B0 /* MenuSwiftUIView.swift in Sources */,
 				A66F2BBE2896BCB200C6AB3E /* MypageView.swift in Sources */,
 				A6D441A528927EBE0084AF8A /* Arambyeol.xcdatamodeld in Sources */,
 				A66F2BC02896CB2F00C6AB3E /* breakfastView.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MypageView: View {
     var body: some View {
-        Text("Hello, myPage!")
+        Color.white.edgesIgnoringSafeArea(.all)
     }
 }
 
