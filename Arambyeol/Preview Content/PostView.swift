@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct PostView: View {
+    @State private var CreatePost : Bool = false
+    @State private var text : String = ""
     var body: some View {
-        
+       
             NavigationView {
                 List{
                     ForEach(PostList){ post in
                         PostCell(post: post).listRowBackground(Color.white).foregroundColor(.black)
                     }
-                }
+                }.searchable(text: $text)
                 .navigationTitle("아람 후기 게시판").navigationBarTitleDisplayMode(.inline).toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Button{} label: {
@@ -23,9 +25,11 @@ struct PostView: View {
                         }
                     }
                     ToolbarItemGroup {
-                        Button{} label: {
-                            Image(systemName: "pencil").foregroundColor(.white)
-                        }
+                        NavigationLink(
+                            destination: MypageView(),
+                            label: {
+                                Label("Search", systemImage: "pencil").foregroundColor(.white)
+                            })
                     }
                 }
             }.environment(\.colorScheme, .dark)
