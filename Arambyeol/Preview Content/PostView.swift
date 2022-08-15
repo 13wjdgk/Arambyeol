@@ -7,25 +7,28 @@
 
 import SwiftUI
 
-
-struct TransparentGroupBox: GroupBoxStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.content
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 8).fill(Color.blue))
-            .overlay(configuration.label.padding(.leading, 4), alignment: .topLeading)
-    }
-}
-
 struct PostView: View {
     var body: some View {
-        ZStack{
-            GroupBox{
-                Text("hi")
-                Text("hello")
-            }.groupBoxStyle(TransparentGroupBox())
-        }
+        
+            NavigationView {
+                List{
+                    ForEach(PostList){ post in
+                        PostCell(post: post).listRowBackground(Color.white).foregroundColor(.black)
+                    }
+                }
+                .navigationTitle("아람 후기 게시판").navigationBarTitleDisplayMode(.inline).toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Button{} label: {
+                            Image(systemName: "magnifyingglass").foregroundColor(.white)
+                        }
+                    }
+                    ToolbarItemGroup {
+                        Button{} label: {
+                            Image(systemName: "pencil").foregroundColor(.white)
+                        }
+                    }
+                }
+            }.environment(\.colorScheme, .dark)
         
     }
 }
