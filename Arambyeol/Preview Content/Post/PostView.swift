@@ -10,27 +10,43 @@ import SwiftUI
 struct PostView: View {
     @State private var CreatePost : Bool = false
     @State private var text : String = ""
+    @State var test = "머리카락"
     var body: some View {
        
             NavigationView {
                 List{
                     ForEach(PostList){ post in
-                        PostCell(post: post).listRowBackground(Color.white).foregroundColor(.black)
-                    }
-                }.searchable(text: $text)
-                .navigationTitle("아람 후기 게시판").navigationBarTitleDisplayMode(.inline).toolbar {
-                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        Button{} label: {
-                            Image(systemName: "magnifyingglass").foregroundColor(.white)
+                        NavigationLink {
+                           PostDetailView()
+                        }label: {
+                            PostCell(post: post).listRowBackground(Color.white)
                         }
                     }
+                }
+                .navigationTitle("아람 후기 게시판").navigationBarTitleDisplayMode(.inline).toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        NavigationLink(
+                            destination: SearchView(text: "", search:false,test: $test),
+                            label: {
+                                Label("Search", systemImage: "magnifyingglass").foregroundColor(.white)
+                            })
+                    }
+  
                     ToolbarItemGroup {
                         NavigationLink(
-                            destination: MypageView(),
+                            destination: PostCreateView(star: 0),
                             label: {
                                 Label("Search", systemImage: "pencil").foregroundColor(.white)
                             })
                     }
+                    ToolbarItemGroup{
+                        Button{
+                            print("test : \($test)")
+                        }label: {
+                            Text("hi").foregroundColor(.white)
+                        }
+                    }
+                   
                 }
             }.environment(\.colorScheme, .dark)
         

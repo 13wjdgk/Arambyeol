@@ -14,6 +14,7 @@ struct MainSwiftUIView: View {
             Color.black.edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack{
+                    Spacer()
                     Image("아람별행성").resizable().frame(width: 112, height: 107)
                         TabView{
                             dinnerSwiftUIView()

@@ -13,7 +13,13 @@
 		A66F2BBC2896BC7700C6AB3E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BBB2896BC7700C6AB3E /* PostView.swift */; };
 		A66F2BBE2896BCB200C6AB3E /* MypageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BBD2896BCB200C6AB3E /* MypageView.swift */; };
 		A66F2BC02896CB2F00C6AB3E /* breakfastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BBF2896CB2F00C6AB3E /* breakfastView.swift */; };
+		A699C13B28B8D85B00182502 /* MyPostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C13A28B8D85B00182502 /* MyPostListView.swift */; };
+		A699C14028B8E09F00182502 /* LoginModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C13F28B8E09F00182502 /* LoginModalView.swift */; };
+		A699C14528B90A1C00182502 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699C14428B90A1C00182502 /* SignUpView.swift */; };
+		A6A0312E28B071410050F1E6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0312D28B071410050F1E6 /* SearchView.swift */; };
 		A6B0897428A1456F0093D627 /* exSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B0897328A1456F0093D627 /* exSwiftUIView.swift */; };
+		A6B1316D28B54E6200F9B630 /* PostCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B1316C28B54E6200F9B630 /* PostCreateView.swift */; };
+		A6B1316F28B6491A00F9B630 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B1316E28B6491A00F9B630 /* PostDetailView.swift */; };
 		A6CB68CB28A3A30C0015B21C /* lunchSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB68CA28A3A30C0015B21C /* lunchSwiftUIView.swift */; };
 		A6CB68CD28A3A32D0015B21C /* dinnerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB68CC28A3A32D0015B21C /* dinnerSwiftUIView.swift */; };
 		A6D4419928927EBD0084AF8A /* ArambyeolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */; };
@@ -52,7 +58,13 @@
 		A66F2BBB2896BC7700C6AB3E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		A66F2BBD2896BCB200C6AB3E /* MypageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageView.swift; sourceTree = "<group>"; };
 		A66F2BBF2896CB2F00C6AB3E /* breakfastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = breakfastView.swift; sourceTree = "<group>"; };
+		A699C13A28B8D85B00182502 /* MyPostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostListView.swift; sourceTree = "<group>"; };
+		A699C13F28B8E09F00182502 /* LoginModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModalView.swift; sourceTree = "<group>"; };
+		A699C14428B90A1C00182502 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A6A0312D28B071410050F1E6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A6B0897328A1456F0093D627 /* exSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exSwiftUIView.swift; sourceTree = "<group>"; };
+		A6B1316C28B54E6200F9B630 /* PostCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateView.swift; sourceTree = "<group>"; };
+		A6B1316E28B6491A00F9B630 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		A6CB68CA28A3A30C0015B21C /* lunchSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lunchSwiftUIView.swift; sourceTree = "<group>"; };
 		A6CB68CC28A3A32D0015B21C /* dinnerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinnerSwiftUIView.swift; sourceTree = "<group>"; };
 		A6D4419528927EBD0084AF8A /* Arambyeol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arambyeol.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +107,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A699C13C28B8DB9200182502 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				A6A0312D28B071410050F1E6 /* SearchView.swift */,
+				A66F2BBB2896BC7700C6AB3E /* PostView.swift */,
+				A620097728A3FA69008B79C5 /* PostCell.swift */,
+				A6B1316C28B54E6200F9B630 /* PostCreateView.swift */,
+				A6B1316E28B6491A00F9B630 /* PostDetailView.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		A699C13D28B8DBB300182502 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB68CA28A3A30C0015B21C /* lunchSwiftUIView.swift */,
+				A6D441C7289283030084AF8A /* MainSwiftUIView.swift */,
+				A66D5F5928A2C090007D51B0 /* MenuSwiftUIView.swift */,
+				A6CB68CC28A3A32D0015B21C /* dinnerSwiftUIView.swift */,
+				A66F2BBF2896CB2F00C6AB3E /* breakfastView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A699C13E28B8DBBD00182502 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				A66F2BBD2896BCB200C6AB3E /* MypageView.swift */,
+				A699C13A28B8D85B00182502 /* MyPostListView.swift */,
+				A699C13F28B8E09F00182502 /* LoginModalView.swift */,
+				A699C14428B90A1C00182502 /* SignUpView.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
 		A6D4418C28927EBD0084AF8A = {
 			isa = PBXGroup;
 			children = (
@@ -133,15 +180,10 @@
 		A6D4419E28927EBE0084AF8A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				A699C13E28B8DBBD00182502 /* Mypage */,
+				A699C13D28B8DBB300182502 /* Main */,
+				A699C13C28B8DB9200182502 /* Post */,
 				A6D4419F28927EBE0084AF8A /* Preview Assets.xcassets */,
-				A6D441C7289283030084AF8A /* MainSwiftUIView.swift */,
-				A66F2BBB2896BC7700C6AB3E /* PostView.swift */,
-				A66F2BBD2896BCB200C6AB3E /* MypageView.swift */,
-				A66F2BBF2896CB2F00C6AB3E /* breakfastView.swift */,
-				A66D5F5928A2C090007D51B0 /* MenuSwiftUIView.swift */,
-				A6CB68CA28A3A30C0015B21C /* lunchSwiftUIView.swift */,
-				A6CB68CC28A3A32D0015B21C /* dinnerSwiftUIView.swift */,
-				A620097728A3FA69008B79C5 /* PostCell.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -179,6 +221,8 @@
 			dependencies = (
 			);
 			name = Arambyeol;
+			packageProductDependencies = (
+			);
 			productName = Arambyeol;
 			productReference = A6D4419528927EBD0084AF8A /* Arambyeol.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +295,8 @@
 				Base,
 			);
 			mainGroup = A6D4418C28927EBD0084AF8A;
+			packageReferences = (
+			);
 			productRefGroup = A6D4419628927EBD0084AF8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,20 +339,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A699C13B28B8D85B00182502 /* MyPostListView.swift in Sources */,
 				A6D441A228927EBE0084AF8A /* Persistence.swift in Sources */,
 				A6B0897428A1456F0093D627 /* exSwiftUIView.swift in Sources */,
 				A66F2BBA2896BC1A00C6AB3E /* ContentView.swift in Sources */,
 				A66D5F5A28A2C090007D51B0 /* MenuSwiftUIView.swift in Sources */,
+				A6B1316D28B54E6200F9B630 /* PostCreateView.swift in Sources */,
 				A6CB68CD28A3A32D0015B21C /* dinnerSwiftUIView.swift in Sources */,
 				A66F2BBE2896BCB200C6AB3E /* MypageView.swift in Sources */,
 				A6CB68CB28A3A30C0015B21C /* lunchSwiftUIView.swift in Sources */,
 				A620097828A3FA69008B79C5 /* PostCell.swift in Sources */,
 				A6D441A528927EBE0084AF8A /* Arambyeol.xcdatamodeld in Sources */,
 				A6D96EEE28A3EC1200CA2BA9 /* Data.swift in Sources */,
+				A6A0312E28B071410050F1E6 /* SearchView.swift in Sources */,
 				A66F2BC02896CB2F00C6AB3E /* breakfastView.swift in Sources */,
 				A6D4419928927EBD0084AF8A /* ArambyeolApp.swift in Sources */,
+				A6B1316F28B6491A00F9B630 /* PostDetailView.swift in Sources */,
+				A699C14528B90A1C00182502 /* SignUpView.swift in Sources */,
 				A66F2BBC2896BC7700C6AB3E /* PostView.swift in Sources */,
 				A6D441C8289283030084AF8A /* MainSwiftUIView.swift in Sources */,
+				A699C14028B8E09F00182502 /* LoginModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
