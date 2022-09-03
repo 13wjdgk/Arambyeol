@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+////    @Environment(\.managedObjectContext) var moc
+//    @FetchRequest(sortDescriptors: []) var User : FetchedResults<User>
+    
     var body: some View {
         TabView{
             MainSwiftUIView().tabItem {

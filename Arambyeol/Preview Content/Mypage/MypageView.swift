@@ -37,6 +37,7 @@ struct MypageGroupBoxStyle : GroupBoxStyle{
     }
 }
 struct MypageView: View {
+    @State var user_info : User = user
     @State var login_Btn = false
     @State var signup_Btn = false
     @State var login_ID = ""
@@ -49,10 +50,15 @@ struct MypageView: View {
                             GroupBox(""){
                                 HStack{
                                     Image("머리").resizable().frame(width: 60, height: 60).padding(EdgeInsets(top: 0, leading: 10, bottom: 5, trailing: 40))
-                                    VStack(alignment: .leading) {
-                                        Text("파란꼬끼리").fontWeight(.bold)
-                                        Text("fodsnf @ gnu.ac.kr")
+                                    if user_info.success {
+                                        VStack(alignment: .leading) {
+                                            Text(user_info.nickname).fontWeight(.bold)
+                                            Text(user_info.user_id)
+                                        }
+                                    }else{
+                                        Text("로그인해 주세요")
                                     }
+                                    
                                     Spacer()
                                 }
                             }.groupBoxStyle(ProfileGroupBoxStyle())
@@ -64,11 +70,12 @@ struct MypageView: View {
 //                                Text("|")
                                 Button{
                                     login_Btn = true
+                                   
                                 }label: {
                                     Text("로그인").foregroundColor(.white)
                                 }.sheet(isPresented: $login_Btn) {
                                     
-                                    LoginModalView()
+                                    LoginModalView(userinfo :$user_info, login_Btn: $login_Btn)
 
                                 }
                                 Text("|")

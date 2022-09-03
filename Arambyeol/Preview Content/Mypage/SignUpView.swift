@@ -9,7 +9,14 @@ import SwiftUI
 
 
 struct SignUpView: View {
+    @State var input_Signup = certifiaction_mail(mail: "", number: 0, certification_number: "")
+    @State var result01 = "인증 실패되었습니다. 다시 시도하십시오"
     @State var email = ""
+    @State var nickname = ""
+    @State var pw = ""
+    @State var checkPw = ""
+    @State var result = [false,false,false,false]
+    @State var number : String = ""
     var body: some View {
         NavigationView {
             GroupBox{
@@ -23,7 +30,8 @@ struct SignUpView: View {
                             })
                             Text("@ gnu.ac.kr")
                             Button{
-                                
+                                SendMail(email: email)
+                                input_Signup.mail = email
                             }label: {
                                 Text("인증").background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray).frame(width:50,height: 25)).padding()
                             }
@@ -40,17 +48,30 @@ struct SignUpView: View {
                     Group{
                         HStack{
                             Text("인증번호 |")
-                            TextField("",text: $email).overlay(VStack{Divider().offset(x: 0, y: 14)
+                            TextField("",text: $number).overlay(VStack{Divider().offset(x: 0, y: 14)
                             })
                             Button{
-                                
+                                input_Signup.number = Int(number) ?? 0
+                                CheckNumber(input_Signup: input_Signup)
+                                print("결과 : \(input_Signup.certification_number)")
+                                if input_Signup.certification_number == "success"{
+                                    print("인증됨")
+                                    result[0] = true
+                                }
                             }label: {
-                                Text("인증").background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray).frame(width:50,height: 25)).padding()
+                                Text("확인").background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray).frame(width:50,height: 25)).padding()
                             }
                         }
                         HStack{
                             Spacer()
-                            Text("인증 실패되었습니다. 다시 시도하십시오").font(.system(size: 11))
+                            if result[0] {
+                                Text("인증되었습니다.").font(.system(size: 11)).foregroundColor(.green)
+                            }else{
+                                Text("인증 실패되었습니다. 메일을 다시 확인해 주세요.").font(.system(size: 11)).foregroundColor(.red)
+                            }
+                                
+                            
+                           
                             Spacer()
                             
                         }
@@ -60,17 +81,24 @@ struct SignUpView: View {
                     Group{
                         HStack{
                             Text("닉네임 |")
-                            TextField("",text: $email).overlay(VStack{Divider().offset(x: 0, y: 14)
+                            TextField("",text: $nickname).overlay(VStack{Divider().offset(x: 0, y: 14)
                             })
                             Button{
-                                
+                                //닉네임 중복 여부
+                                if check_nickname(nickname: nickname) == "Available" {
+                                    result[1] = true
+                                }
                             }label: {
                                 Text("확인").background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray).frame(width:50,height: 25)).padding()
                             }
                         }
                         HStack{
                             Spacer()
-                            Text("* N 글자 이하로 입력해 주세요").font(.system(size: 11))
+                            if result[1] {
+                                Text("사용 가능한 닉네임입니다.").font(.system(size: 11)).foregroundColor(.green)
+                            }else{
+                                Text("사용 불가능한 닉네임입니다. 다시 입력해 주세요").font(.system(size: 11)).foregroundColor(.red)
+                            }
                             Spacer()
                             
                         }
@@ -82,10 +110,13 @@ struct SignUpView: View {
                     Group{
                         HStack{
                             Text("비밀번호 |")
-                            TextField("",text: $email).overlay(VStack{Divider().offset(x: 0, y: 14)
+                            TextField("",text: $pw).overlay(VStack{Divider().offset(x: 0, y: 14)
                             })
                             Button{
-                                
+                                //비밀번호 사용가능 여부 확인
+                                if true {
+                                    result[2] = true
+                                }
                             }label: {
                                 Text("확인").background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray).frame(width:50,height: 25)).padding()
                             }
@@ -93,8 +124,13 @@ struct SignUpView: View {
                         HStack{
                             Spacer()
                             VStack{
-                                Text("* 8~ 15 이하로 입력해 주세요.").font(.system(size: 11))
-                                Text("  영문자,숫자,특수문자만 가능합니다..").font(.system(size: 11))
+                                if result[2]{
+                                    Text(" 사용 가능한 비밀번호입니다.").font(.system(size: 11)).foregroundColor(.green)
+                                }else {
+                                    Text("* 8~ 15 이하로 입력해 주세요.").font(.system(size: 11))
+                                    Text("  영문자,숫자,특수문자만 가능합니다..").font(.system(size: 11))
+                                }
+                                
                             }
 
                             Spacer()
@@ -104,17 +140,24 @@ struct SignUpView: View {
                     Group{
                         HStack{
                             Text("비밀번호 확인|")
-                            TextField("",text: $email).overlay(VStack{Divider().offset(x: 0, y: 14)
+                            TextField("",text: $checkPw).overlay(VStack{Divider().offset(x: 0, y: 14)
                             })
                             Button{
-                                
+                                if check_pw(pw: pw, check_pw: checkPw) {
+                                    result[3] = true
+                                }
                             }label: {
                                 Text("확인").background(RoundedRectangle(cornerRadius: 8).stroke(Color.gray).frame(width:50,height: 25)).padding()
                             }
                         }
                         HStack{
                             Spacer()
-                            Text(" 비밀번호가 일치하지 않습니다.").font(.system(size: 11))
+                            if result[3]{
+                                Text(" 비밀번호가 일치합니다.").font(.system(size: 11)).foregroundColor(.green)
+                            }else {
+                                Text(" 비밀번호가 일치하지 않습니다.").font(.system(size: 11)).foregroundColor(.red)
+                            }
+                            
                             Spacer()
                             
                         }
@@ -122,7 +165,14 @@ struct SignUpView: View {
                     Spacer()
                     HStack{
                         Spacer()
-                        Button{}label: {
+                        Button{
+                            if result.contains(false){
+                                print("가입실패")
+                            }else{
+                                goSignup(Info: Signup_info(user_id: "\(email)@gnu.ac.kr", user_pw: pw, nickname: nickname))
+                                print("가입완료")
+                            }
+                        }label: {
                             Text("가입하기").frame(width: 80, height: 25, alignment: .center).background(.gray).foregroundColor(.white)
                         }
                         Spacer()

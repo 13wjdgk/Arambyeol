@@ -8,14 +8,15 @@
 import CoreData
 
 struct PersistenceController {
+    //싱글톤
     static let shared = PersistenceController()
-
+    //프리뷰
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+//            let newItem = User(context: viewContext)
+//            newItem.user_id = ""
         }
         do {
             try viewContext.save()
@@ -27,7 +28,7 @@ struct PersistenceController {
         }
         return result
     }()
-
+    // container는 모든 것을 담고 있는 데이터베이스
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
@@ -35,6 +36,7 @@ struct PersistenceController {
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        //데이터를 로드하는 함수
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
