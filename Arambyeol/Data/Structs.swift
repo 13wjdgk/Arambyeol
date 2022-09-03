@@ -60,7 +60,7 @@ struct result : Codable {
 
 // post
 struct Posting : Codable{
-    let image : Data
+    let image : String
     let access_token : String
     let title : String
     let content : String
@@ -76,6 +76,11 @@ struct Posting : Codable{
         case meal_time
         case user_id
     }
+}
+
+struct delete_Post : Codable{
+    let access_toke : String
+    let post_id : Int
 }
 
 //Menu

@@ -62,6 +62,11 @@ struct PostDetailView: View {
                         Image(systemName: "hand.thumbsup.fill").padding().foregroundColor(.black)
                     }
                     
+                    Button{
+//                        deletePost()
+                    }label: {
+                        Image(systemName: "trash.fill").padding().foregroundColor(.black)
+                    }
                     Text("16")
                 }
                 

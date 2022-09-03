@@ -149,10 +149,10 @@ struct PostCreateView: View {
                     HStack{
                         TextField("제목을 입력해주세요",text: $title)
                         Button{
-//                            var Create_Post = Posting(image: image.jpegData(compressionQuality: 1) ?? Data()
-//, access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2MjE4NTg5MCwianRpIjoiMjg1ODQ0MjctODA0MS00MjUxLTk5OWUtYWFjY2U2Y2NmN2E0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InF3ZTEyMzQiLCJuYmYiOjE2NjIxODU4OTAsImV4cCI6MTY2MjI3MjI5MH0.NYcpcLTCeDVmuBNx--oWRZ7AkOo5liUVBzShe11bPJM", title: "아람 맛없어", content: "아람 불변의 법칙", score: 4, meal_time: "아침", user_id: "qwe1234")
+                            var Create_Post = Posting(image: image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
+, access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2MjE4NTg5MCwianRpIjoiMjg1ODQ0MjctODA0MS00MjUxLTk5OWUtYWFjY2U2Y2NmN2E0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InF3ZTEyMzQiLCJuYmYiOjE2NjIxODU4OTAsImV4cCI6MTY2MjI3MjI5MH0.NYcpcLTCeDVmuBNx--oWRZ7AkOo5liUVBzShe11bPJM", title: title, content:content, score: star, meal_time: meal_time, user_id: "13wjdgk@gnu.ac.kr")
 //                            var Create_Post = imagg(image: image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? "")
-//                            goPosting(Post : Create_Post)
+                            goPosting(Post : Create_Post)
                             
                         }label: {
                             Text("완료").background(RoundedRectangle(cornerRadius: 5).fill(.blue).frame(width: 50)).foregroundColor(.white)
