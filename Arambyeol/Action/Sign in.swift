@@ -30,11 +30,11 @@ func login (login : Login,success : User){
               
               let Result: Login_result = try JSONDecoder().decode(Login_result.self, from: data)
               print("성공? : ")
-              user.user_id = login.user_id
-              user.access_token = Result.access_token
-              user.refresh_token = Result.refresh_token
-              user.success = true
-              user.nickname = Result.nickname
+//              user.user_id = login.user_id
+//              user.access_token = Result.access_token
+//              user.refresh_token = Result.refresh_token
+//              user.success = true
+//              user.nickname = Result.nickname
               print(Result)
           } catch let error {
               do{

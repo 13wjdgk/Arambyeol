@@ -21,7 +21,7 @@ struct ContentView: View {
                 Image(systemName: "house")
                 Text("Main")
             }
-            MypageView().tabItem {
+            MypageView(coreDM: CoreDataManager(), user_info: Users()).tabItem {
                 Image(systemName: "house")
                 Text("Main")
             }

@@ -8,9 +8,9 @@
 import CoreData
 
 struct PersistenceController {
-    //싱글톤
+    //전체 앱이 사용할 싱글톤
     static let shared = PersistenceController()
-    //프리뷰
+    // SwiftUI 미리보기를 위한 테스트 구성 (프리뷰)
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
@@ -54,5 +54,16 @@ struct PersistenceController {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+    }
+    func save() {
+        let context = container.viewContext
+
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Show some error here
+            }
+        }
     }
 }

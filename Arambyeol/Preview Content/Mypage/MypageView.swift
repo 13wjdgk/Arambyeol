@@ -37,11 +37,16 @@ struct MypageGroupBoxStyle : GroupBoxStyle{
     }
 }
 struct MypageView: View {
-    @State var user_info : User = user
+    let coreDM : CoreDataManager
+    @State var Userr : [User] = [User]()
+    @State var user_info : Users
     @State var login_Btn = false
     @State var signup_Btn = false
     @State var login_ID = ""
     @State var login_PW = ""
+    private func showUser(){
+        Userr = coreDM.get_user()
+    }
     var body: some View {
         NavigationView {
                     GroupBox() {
@@ -64,18 +69,21 @@ struct MypageView: View {
                             }.groupBoxStyle(ProfileGroupBoxStyle())
                             HStack{
                                 Spacer()
-//                                Button{}label: {
-//                                    Text("내 정보 수정").foregroundColor(.white)
-//                                }
-//                                Text("|")
+                                Button{
+                                    print("로그인 확인 : ")
+                                    showUser()
+                                }label: {
+                                    Text("확인").foregroundColor(.white)
+                                }
+                                Text("|")
                                 Button{
                                     login_Btn = true
-                                   
+                                    coreDM.login_user(user_id: "13wjdgk", access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2MjI3OTY2NywianRpIjoiNDllN2ViMGUtMDBiMS00YjUwLWFhZjctZWViNGJjNmJmM2NhIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEzd2pkZ2tAZ251LmFjLmtyIiwibmJmIjoxNjYyMjc5NjY3LCJleHAiOjE2NjIzNjYwNjd9.YN0hnfZ6yQ7in_IneKKRUzCMGyM6tBAauLW6v9REYi8", refresh_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2MjI3OTY2NywianRpIjoiMDg1ZjQ0MWYtYzllNC00OWI5LWI5Y2YtMTI0MTBjNDUzNjM5IiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIxM3dqZGdrQGdudS5hYy5rciIsIm5iZiI6MTY2MjI3OTY2NywiZXhwIjoxNjYyMzY2MDY3fQ.g3YV0XsWMjceLA0jAEzcjdKIxr_GMuPtidEuMgKB3XI")
                                 }label: {
                                     Text("로그인").foregroundColor(.white)
                                 }.sheet(isPresented: $login_Btn) {
                                     
-                                    LoginModalView(userinfo :$user_info, login_Btn: $login_Btn)
+//                                    LoginModalView(userinfo :$user_info, login_Btn: $login_Btn)
 
                                 }
                                 Text("|")
@@ -98,6 +106,19 @@ struct MypageView: View {
                                 
                                 
                             }.listStyle(.plain).background(.clear)
+                            
+                            List{
+                                ForEach(Userr, id: \.self){ user in
+                                    Text(user.user_id ?? "")
+                                    
+                                }.onDelete { IndexSet in
+                                    IndexSet.forEach { index in
+                                        let  u = Userr[index]
+                                        coreDM.delete_user(user: u)
+                                        showUser()
+                                    }
+                                }
+                            }
                             }
                         Spacer()
                     }.padding()
@@ -110,6 +131,6 @@ struct MypageView: View {
 
 struct MypageView_Previews: PreviewProvider {
     static var previews: some View {
-        MypageView()
+        MypageView(coreDM :CoreDataManager(), user_info: Users())
     }
 }

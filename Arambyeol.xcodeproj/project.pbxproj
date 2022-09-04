@@ -13,7 +13,8 @@
 		A6634CAC28C3625200A4C328 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6634CAB28C3625200A4C328 /* Post.swift */; };
 		A6634CAF28C362F600A4C328 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6634CAE28C362F600A4C328 /* Structs.swift */; };
 		A6634CB428C3746400A4C328 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6634CB328C3746400A4C328 /* DataController.swift */; };
-		A6634CB728C39BD500A4C328 /* Aramvyeol.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6634CB528C39BD500A4C328 /* Aramvyeol.xcdatamodeld */; };
+		A6634CBA28C49AE100A4C328 /* Arambyeol.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6634CB828C49AE100A4C328 /* Arambyeol.xcdatamodeld */; };
+		A6634CBD28C49C8C00A4C328 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6634CBC28C49C8B00A4C328 /* CoreDataManager.swift */; };
 		A66D5F5A28A2C090007D51B0 /* MenuSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D5F5928A2C090007D51B0 /* MenuSwiftUIView.swift */; };
 		A66F2BBA2896BC1A00C6AB3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BB92896BC1A00C6AB3E /* ContentView.swift */; };
 		A66F2BBC2896BC7700C6AB3E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F2BBB2896BC7700C6AB3E /* PostView.swift */; };
@@ -64,7 +65,8 @@
 		A6634CAB28C3625200A4C328 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A6634CAE28C362F600A4C328 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A6634CB328C3746400A4C328 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		A6634CB628C39BD500A4C328 /* Aramvyeol.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aramvyeol.xcdatamodel; sourceTree = "<group>"; };
+		A6634CB928C49AE100A4C328 /* Arambyeol.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arambyeol.xcdatamodel; sourceTree = "<group>"; };
+		A6634CBC28C49C8B00A4C328 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A66D5F5928A2C090007D51B0 /* MenuSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSwiftUIView.swift; sourceTree = "<group>"; };
 		A66F2BB92896BC1A00C6AB3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A66F2BBB2896BC7700C6AB3E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		A6634CBB28C49C7900A4C328 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A6634CBC28C49C8B00A4C328 /* CoreDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		A699C13C28B8DB9200182502 /* Post */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		A6D4418C28927EBD0084AF8A = {
 			isa = PBXGroup;
 			children = (
+				A6634CB828C49AE100A4C328 /* Arambyeol.xcdatamodeld */,
 				A6D4419728927EBD0084AF8A /* Arambyeol */,
 				A6D441AD28927EBE0084AF8A /* ArambyeolTests */,
 				A6D441B728927EBE0084AF8A /* ArambyeolUITests */,
@@ -186,6 +197,7 @@
 		A6D4419728927EBD0084AF8A /* Arambyeol */ = {
 			isa = PBXGroup;
 			children = (
+				A6634CBB28C49C7900A4C328 /* Manager */,
 				A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */,
 				A6634CAD28C362A600A4C328 /* Data */,
 				A6FA834228C1E7C9001EF7FC /* Action */,
@@ -195,7 +207,6 @@
 				A6D4419E28927EBE0084AF8A /* Preview Content */,
 				A6B0897328A1456F0093D627 /* exSwiftUIView.swift */,
 				A6634CB328C3746400A4C328 /* DataController.swift */,
-				A6634CB528C39BD500A4C328 /* Aramvyeol.xcdatamodeld */,
 			);
 			path = Arambyeol;
 			sourceTree = "<group>";
@@ -375,10 +386,11 @@
 			files = (
 				A699C13B28B8D85B00182502 /* MyPostListView.swift in Sources */,
 				A6D441A228927EBE0084AF8A /* Persistence.swift in Sources */,
-				A6634CB728C39BD500A4C328 /* Aramvyeol.xcdatamodeld in Sources */,
+				A6634CBA28C49AE100A4C328 /* Arambyeol.xcdatamodeld in Sources */,
 				A6B0897428A1456F0093D627 /* exSwiftUIView.swift in Sources */,
 				A6634CAC28C3625200A4C328 /* Post.swift in Sources */,
 				A6FA834428C1EE80001EF7FC /* Sign up.swift in Sources */,
+				A6634CBD28C49C8C00A4C328 /* CoreDataManager.swift in Sources */,
 				A6634CA628C361C400A4C328 /* Sign in.swift in Sources */,
 				A66F2BBA2896BC1A00C6AB3E /* ContentView.swift in Sources */,
 				A66D5F5A28A2C090007D51B0 /* MenuSwiftUIView.swift in Sources */,
@@ -725,13 +737,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A6634CB528C39BD500A4C328 /* Aramvyeol.xcdatamodeld */ = {
+		A6634CB828C49AE100A4C328 /* Arambyeol.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A6634CB628C39BD500A4C328 /* Aramvyeol.xcdatamodel */,
+				A6634CB928C49AE100A4C328 /* Arambyeol.xcdatamodel */,
 			);
-			currentVersion = A6634CB628C39BD500A4C328 /* Aramvyeol.xcdatamodel */;
-			path = Aramvyeol.xcdatamodeld;
+			currentVersion = A6634CB928C49AE100A4C328 /* Arambyeol.xcdatamodel */;
+			path = Arambyeol.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct LoginModalView: View {
-    @Binding var userinfo : User
+    @Binding var userinfo : Users
     @Binding var login_Btn : Bool
     @State var login_ID = ""
     @State var login_PW = ""
@@ -27,28 +27,28 @@ struct LoginModalView: View {
                     Text("PW |")
                     TextField("",text: $login_PW).frame(width: 250,height: 25).overlay(VStack{Divider().offset(x: 0, y: 15)}).padding()
                 }
-                Button{
-                    login(login: Login(user_id: login_ID, user_pw: login_PW), success: userinfo)
-                    if(userinfo.success){
-                        print("로그인 결과 : \(user.success)")
-//                        login_Btn = false
-//                        userinfo.user_id = user.user_id
-//                        userinfo.access_token = user.access_token
-//                        userinfo.refresh_token = user.refresh_token
-//                        userinfo.nickname = user.nickname
-//                        userinfo.success = true
-                        
-                    }else {
-                        print("로그인 실패")
-                    }
+//                Button{
+//                    login(login: Login(user_id: login_ID, user_pw: login_PW), success: userinfo)
+////                    if($userinfo.success){
+////                        print("로그인 결과 : \(user.success)")
+////                        login_Btn = false
+////                        userinfo.user_id = user.user_id
+////                        userinfo.access_token = user.access_token
+////                        userinfo.refresh_token = user.refresh_token
+////                        userinfo.nickname = user.nickname
+////                        userinfo.success = true
+//
+//                    }else {
+//                        print("로그인 실패")
+//                    }
 //                    let user = Arambyeol.User(context : moc)
 //                    user.user_id = login_ID
 //                    user.refresh_token = "dfjsdlkfwiowe"
 //                    user.access_token = "qwefldkjerq98gqgj3q4g"
 //                    try? moc.save()
-                }label: {
-                    Text("확인")
-                }
+//                }label: {
+//                    Text("확인")
+//                }
                 Spacer().frame(height:50)
                 HStack{
                     Spacer()
@@ -65,6 +65,6 @@ struct LoginModalView: View {
 
 struct LoginModalView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginModalView(userinfo:.constant(user), login_Btn: .constant(true))
+        LoginModalView(userinfo:.constant(Users()), login_Btn: .constant(true))
     }
 }

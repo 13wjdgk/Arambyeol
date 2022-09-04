@@ -61,13 +61,13 @@ struct PostDetailView: View {
                     }label: {
                         Image(systemName: "hand.thumbsup.fill").padding().foregroundColor(.black)
                     }
-                    
+                    Text("16")
                     Button{
 //                        deletePost()
                     }label: {
                         Image(systemName: "trash.fill").padding().foregroundColor(.black)
                     }
-                    Text("16")
+                    
                 }
                 
                Spacer()
