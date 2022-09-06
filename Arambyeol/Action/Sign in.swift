@@ -54,9 +54,9 @@ func login (login : Login , token : inout [String]) -> Int {
     }
     task.resume()
     sleep(5)
-    token[1] = Results[0]
-    token[2] = Results[1]
-    token[3] = Results[2]
+    token[0] = Results[0]
+    token[1] = Results[1]
+    token[2] = Results[2]
     return result_B
 }
 //닉네임 변경

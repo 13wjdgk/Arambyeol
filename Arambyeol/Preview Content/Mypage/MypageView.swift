@@ -69,8 +69,8 @@ struct MypageView: View {
                                     Image("머리").resizable().frame(width: 60, height: 60).padding(EdgeInsets(top: 0, leading: 10, bottom: 5, trailing: 40))
                                     if login_state == 1 {
                                         VStack(alignment: .leading) {
-//                                            Text(usser[0].nickname!).fontWeight(.bold)
-//                                            Text(usser[0].user_id!)
+                                            Text(usser[0].nickname!).fontWeight(.bold)
+                                            Text(usser[0].user_id!)
                                         }
                                     }else{
                                         Text("로그인해 주세요")
@@ -107,8 +107,8 @@ struct MypageView: View {
                                         print("로그아웃 전 count : \(usser.count)")
                                         do{
 //
-                                            // 로그아웃 과정 2. 로그인 user 데이터 삭제 (CoreData User)
-//                                            coreDM.delete_user( content: managedObjContext)
+//                                             로그아웃 과정 2. 로그인 user 데이터 삭제 (CoreData User)
+                                            coreDM.delete_user( content: managedObjContext)
                                         }catch{
                                             print("로그아웃 실패")
                                         }
@@ -146,7 +146,7 @@ struct MypageView: View {
                                                 print("회원가입 데이터 삭제 후 : \(usser.count)")
 //
 //                                                회원가입 과정 7-1. CoreData User에 login 정보 추가
-//                                                coreDM.add_user(user_id: signup_info[0], access_token: signup_info[1], refresh_token: signup_info[2], nickname: signup_info[3], content: managedObjContext)
+                                                coreDM.add_user(user_id: signup_info[0], access_token: signup_info[1], refresh_token: signup_info[2], nickname: signup_info[3], content: managedObjContext)
                                                 print("회원가입 데이터 추가 후 : \(usser.count)")
                                          }
                                             

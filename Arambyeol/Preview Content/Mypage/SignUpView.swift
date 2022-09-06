@@ -184,7 +184,7 @@ struct SignUpView: View {
                         Spacer()
                         Button{
                             //회원가입 과정 5. 위의 과정을 다 거쳤는지 확인 == result의 모든 값이 true여만 회원가입 가능
-                            if result[3] {
+                            if result.contains(false) {
                                 signup_result_alert = true
 //                                print("임시 회원가입 : \(goSignup(Info: Signup_info(user_id: "13wjdgk@gnu.ac.kr", user_pw: "12345", nickname: "hellllllllll")))")
 //                                login_state = login(login: Login(user_id: "13wjdgk@gnu.ac.kr", user_pw: "12345" ), token: &token)
@@ -193,18 +193,18 @@ struct SignUpView: View {
                                 
                             }else{
                                 //회원가입 과정 6. 회원가입 API 요청
-//                                if goSignup(Info: Signup_info(user_id: "\(email)@gnu.ac.kr", user_pw: pw, nickname: nickname)) {
+                                if goSignup(Info: Signup_info(user_id: "\(email)@gnu.ac.kr", user_pw: pw, nickname: nickname)) {
 //
                                     signup_result_alert = true
                                     signup_result =  "가입완료"
                                     token[0] = "\(email)@gnu.ac.kr"
-                                    login_state = 1
+                                   
 //                                    //회원가입 과정 7. 로그인 API 요청
-//                                    login_state = login(login: Login(user_id: "\(email)@gnu.ac.kr", user_pw: pw ), token: &token)
+                                    login_state = login(login: Login(user_id: "\(email)@gnu.ac.kr", user_pw: pw ), token: &token)
 //
 //                                    //API에서 로그인이 성공되면
 //
-//                                }
+                                }
                                 
                             }
                         }label: {
