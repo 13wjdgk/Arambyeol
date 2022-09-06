@@ -2,10 +2,11 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="access_token" attributeType="String"/>
+        <attribute name="nickname" optional="YES" attributeType="String"/>
         <attribute name="refresh_token" attributeType="String"/>
         <attribute name="user_id" attributeType="String"/>
     </entity>
     <elements>
-        <element name="User" positionX="-36" positionY="9" width="128" height="14"/>
+        <element name="User" positionX="-36" positionY="9" width="128" height="89"/>
     </elements>
 </model>

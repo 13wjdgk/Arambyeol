@@ -7,22 +7,7 @@
 
 import Foundation
 //coreData 대신
-//User
-class Users : ObservableObject{
-    @Published var user_id : String
-    @Published var access_token : String
-    @Published var refresh_token : String
-    @Published var nickname : String
-    @Published var success : Bool
-    init(){
-        self.user_id = ""
-        self.access_token = ""
-        self.refresh_token = ""
-        self.success = false
-        self.nickname = ""
-    }
-}
-var user = User()
+
 
 
 

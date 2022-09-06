@@ -48,8 +48,14 @@ struct Nickname : Codable{
     let nickname : String
 }
 
+struct change_nickname : Codable {
+    let access_token : String
+    let user_id : String
+    let nickname : String
+}
+
 // API 결과
-struct result : Codable {
+struct API_result : Codable {
     let result : String
 }
 

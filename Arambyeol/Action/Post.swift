@@ -30,7 +30,7 @@ func goPosting (Post : Posting){
         if let data = data {
 
           do {
-              let Result: result = try JSONDecoder().decode(result.self, from: data)
+              let Result: API_result = try JSONDecoder().decode(API_result.self, from: data)
               print("성공? : ")
               print(Result)
           } catch let error {
@@ -60,7 +60,7 @@ func deletePost(){
                if let data = data {
 
                  do {
-                     let Result: result = try JSONDecoder().decode(result.self, from: data)
+                     let Result: API_result = try JSONDecoder().decode(API_result.self, from: data)
                      print("성공? : ")
                      print(Result)
                  } catch let error {

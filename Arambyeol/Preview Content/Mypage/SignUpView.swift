@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SignUpView: View {
     @State var input_Signup = certifiaction_mail(mail: "", number: 0, certification_number: "")
+    @Binding var goView : Bool
     @State var result01 = "인증 실패되었습니다. 다시 시도하십시오"
     @State var email = ""
     @State var nickname = ""
@@ -167,9 +168,11 @@ struct SignUpView: View {
                         Spacer()
                         Button{
                             if result.contains(false){
+                                goView = false
                                 print("가입실패")
                             }else{
                                 goSignup(Info: Signup_info(user_id: "\(email)@gnu.ac.kr", user_pw: pw, nickname: nickname))
+                                goView = false
                                 print("가입완료")
                             }
                         }label: {
@@ -189,6 +192,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(goView : .constant(true))
     }
 }

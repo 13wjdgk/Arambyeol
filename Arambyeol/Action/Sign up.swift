@@ -47,7 +47,7 @@ func CheckNumber(input_Signup :  certifiaction_mail ) -> String {
         if let data = data {
           
           do {
-              let Result: result = try JSONDecoder().decode(result.self, from: data)
+              let Result: API_result = try JSONDecoder().decode(API_result.self, from: data)
               print("성공")
               input_Signup.certification_number = Result.result
 //              return resResult
@@ -70,9 +70,9 @@ func CheckNumber(input_Signup :  certifiaction_mail ) -> String {
 //닉네임 중복여부
 func check_nickname(nickname : String) -> String {
     var resResult = ""
-    var components = URLComponents(string: "http://203.255.3.246:5004/member/nickname") // 1
-    let nicknameValue = URLQueryItem(name: "nickname", value: "\(nickname)")               // 2                       // 2
-    components?.queryItems = [nicknameValue]                                         // 3
+    var components = URLComponents(string: "http://203.255.3.246:5004/member/nickname")
+    let nicknameValue = URLQueryItem(name: "nickname", value: "\(nickname)")
+    components?.queryItems = [nicknameValue]
     let com_url = components?.url
 
     guard let url = com_url else {
@@ -91,7 +91,7 @@ func check_nickname(nickname : String) -> String {
            }
            if let data = data {
                do {
-                   let Result: result = try JSONDecoder().decode(result.self, from: data)
+                   let Result: API_result = try JSONDecoder().decode(API_result.self, from: data)
                    print("성공")
                    resResult = Result.result
      //              return resResult
@@ -141,9 +141,14 @@ func goSignup(Info : Signup_info){
         if let data = data {
           
           do {
-              let Result: result = try JSONDecoder().decode(result.self, from: data)
-              print("성공? : ")
-              print(Result)
+              let Result: API_result = try JSONDecoder().decode(API_result.self, from: data)
+              if Result.result == "success"{
+                  print("성공? : ")
+                  print(Result)
+              }else{
+                  print("실패")
+              }
+              
           } catch let error {
               print("err남")
               print(error)

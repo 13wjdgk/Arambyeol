@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A620097828A3FA69008B79C5 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A620097728A3FA69008B79C5 /* PostCell.swift */; };
+		A6458E0328C5DA0D00E0DDD3 /* EditInfoIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6458E0228C5DA0D00E0DDD3 /* EditInfoIView.swift */; };
 		A6634CA628C361C400A4C328 /* Sign in.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6634CA528C361C400A4C328 /* Sign in.swift */; };
 		A6634CAA28C3623C00A4C328 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6634CA928C3623C00A4C328 /* Menu.swift */; };
 		A6634CAC28C3625200A4C328 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6634CAB28C3625200A4C328 /* Post.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		A620097728A3FA69008B79C5 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		A6458E0228C5DA0D00E0DDD3 /* EditInfoIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoIView.swift; sourceTree = "<group>"; };
 		A6634CA528C361C400A4C328 /* Sign in.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sign in.swift"; sourceTree = "<group>"; };
 		A6634CA928C3623C00A4C328 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		A6634CAB28C3625200A4C328 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				A699C13A28B8D85B00182502 /* MyPostListView.swift */,
 				A699C13F28B8E09F00182502 /* LoginModalView.swift */,
 				A699C14428B90A1C00182502 /* SignUpView.swift */,
+				A6458E0228C5DA0D00E0DDD3 /* EditInfoIView.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				A6D4419928927EBD0084AF8A /* ArambyeolApp.swift in Sources */,
 				A6B1316F28B6491A00F9B630 /* PostDetailView.swift in Sources */,
 				A699C14528B90A1C00182502 /* SignUpView.swift in Sources */,
+				A6458E0328C5DA0D00E0DDD3 /* EditInfoIView.swift in Sources */,
 				A66F2BBC2896BC7700C6AB3E /* PostView.swift in Sources */,
 				A6D441C8289283030084AF8A /* MainSwiftUIView.swift in Sources */,
 				A699C14028B8E09F00182502 /* LoginModalView.swift in Sources */,

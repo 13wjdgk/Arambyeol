@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-////    @Environment(\.managedObjectContext) var moc
-//    @FetchRequest(sortDescriptors: []) var User : FetchedResults<User>
-    
+    //user CoreData controller
+    @State var coreDM : CoreDataManager = CoreDataManager()
+    @Environment(\.managedObjectContext) var managedObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.user_id , order: .reverse)]) var usser : FetchedResults<User>
+    // 로그인 유저 정보 저장 CoreData
+    @State var user : User
+//    
     var body: some View {
         TabView{
             MainSwiftUIView().tabItem {
@@ -21,7 +25,7 @@ struct ContentView: View {
                 Image(systemName: "house")
                 Text("Main")
             }
-            MypageView(coreDM: CoreDataManager(), user_info: Users()).tabItem {
+            MypageView(  coreDM: $coreDM , user: $user ).tabItem {
                 Image(systemName: "house")
                 Text("Main")
             }
@@ -31,6 +35,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView( user: User())
     }
 }
