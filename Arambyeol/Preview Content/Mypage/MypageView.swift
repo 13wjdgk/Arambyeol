@@ -47,22 +47,18 @@ struct MypageView: View {
     @State var login_ID = ""
     @State var login_PW = ""
     @State var login_state = -1
-    func updateUser(user : User , coreDM : CoreDataManager , usser : FetchedResults<User>){
-        print("useer : \(usser.count)")
-        print("useer[0] : \(usser[0].user_id)")
-//        print("useer[1] : \(usser[1].user_id)")
-        print("countt : \(coreDM.fetchUsers().count)")
-//        let new_user = coreDM.fetchUsers()[0]
-//        print("plzzz : \(new_user.user_id)")
+    @State var signup_info = ["","","",""]
 
-//        user.user_id = new_user.user_id
-//        user.nickname = new_user.nickname
-//        user.access_token = new_user.access_token
-//        user.refresh_token = new_user.refresh_token
-    }
+    
+    
+    //user 업데이트 확인용
+//    func updateUser(user : User , coreDM : CoreDataManager , usser : FetchedResults<User>){
+//        print("useer : \(usser.count)")
+//        print("useer[0] : \(usser[0].user_id)")
+//        print("countt : \(coreDM.fetchUsers().count)")
+//
+//    }
    
-
-//    CoreDataManager().persistentContainer.viewContext.fetch(User.fetchRequest())
     var body: some View {
         NavigationView {
                     GroupBox("") {
@@ -73,8 +69,8 @@ struct MypageView: View {
                                     Image("머리").resizable().frame(width: 60, height: 60).padding(EdgeInsets(top: 0, leading: 10, bottom: 5, trailing: 40))
                                     if login_state == 1 {
                                         VStack(alignment: .leading) {
-                                            Text(usser[0].nickname!).fontWeight(.bold)
-                                            Text(usser[0].user_id!)
+//                                            Text(usser[0].nickname!).fontWeight(.bold)
+//                                            Text(usser[0].user_id!)
                                         }
                                     }else{
                                         Text("로그인해 주세요")
@@ -90,51 +86,37 @@ struct MypageView: View {
                                 if login_state != 1 {
                                     
                                     Button{
-//                                         로그인 기능 1. 전체 User CoreData를 삭제한다.
-//                                        coreDM.deleteAllUser()
-//                                        // 로그인 기능 2. user 초기화
-//                                        user = coreDM.login_user(user_id: "", access_token: "", refresh_token: "", nickname: "")
-//                                        print("초기화 후 : \(user)")
-//                                        CoreDataManager.shared.add_user(user_id: "", access_token: "", refresh_token: "", nickname: "", content: managedObjContext)
-//                                        CoreDataManager.shared.save(content: managedObjContext)
-//
-//                                        print("0 아니라고1 : \(usser.count)")
-//                                        print("0 아니라고2 : \( CoreDataManager.shared.fetchUsers().count)")
+
                                         login_Btn = true
                                         
                                     }label: {
+                                    
                                         Text("로그인").foregroundColor(.white)
                                     }.sheet(isPresented: $login_Btn) {
-                                        // 로그인 기능 2. LoginModal 페이지로 이동한다.
-                                        LoginModalView( coreDM: $coreDM, user
-                                                       : $user, login_Btn: $login_Btn , login_state : $login_state).onDisappear(){
-                                            updateUser(user: user, coreDM: coreDM, usser: usser)
-
-                                        }
+                                        //로그인 과정 1. 로그인 버튼 누르면 LoginModalView로 이동
+                                        LoginModalView( coreDM: $coreDM,  login_Btn: $login_Btn , login_state : $login_state)
 
                                     }
                                     
-                                }else { //로그인 안되어있을 경우 로그인 버튼
+                                }else { //로그아웃 버튼
                                     
                                     Button{
-                                        
+                                        //로그아웃 과정 1. login_state = 0으로 변경해서 로그아웃 됨을 알림 -> UI변경
                                         login_state = 0
                                         print("로그아웃 전 : \(usser)")
                                         print("로그아웃 전 count : \(usser.count)")
                                         do{
-//                                            coreDM.deleteAllUser(content: managedObjContext)
-                                            coreDM.add_user(user_id: "5test", access_token: "5test", refresh_token: "5test", nickname: "5test", content: managedObjContext)
-                                            coreDM.delete_user(user: usser[0], content: managedObjContext)
+//
+                                            // 로그아웃 과정 2. 로그인 user 데이터 삭제 (CoreData User)
+//                                            coreDM.delete_user( content: managedObjContext)
                                         }catch{
                                             print("로그아웃 실패")
                                         }
                                         print("로그아웃 후 : \(usser.count)")
                                             print("로그아웃 완료 !!!")
-                                        
-                                       
-                                        
+
                                         print("로그아웃 : \(usser)")
-                                        //CoreData user 정보 없애기 API 호출
+                                       
                                     }label: {
                                         Text("로그아웃").foregroundColor(.white)
                                         
@@ -155,7 +137,21 @@ struct MypageView: View {
                                 }else {
                                     
                                     NavigationLink(isActive: $goView ){
-                                        SignUpView( goView: $goView)
+                                        SignUpView( coreDM: $coreDM, goView: $goView , login_state : $login_state, token: $signup_info ).onDisappear(){
+                                            print("닫힘=======================================================")
+                                            print("닫히고 user 정보 : \(usser.count)")
+                                            if(login_state == 1 ){
+                                                print("회원가입 데이터 삭제 전 : \(usser.count)")
+//                                                coreDM.delete_user( content: managedObjContext)
+                                                print("회원가입 데이터 삭제 후 : \(usser.count)")
+//
+//                                                회원가입 과정 7-1. CoreData User에 login 정보 추가
+//                                                coreDM.add_user(user_id: signup_info[0], access_token: signup_info[1], refresh_token: signup_info[2], nickname: signup_info[3], content: managedObjContext)
+                                                print("회원가입 데이터 추가 후 : \(usser.count)")
+                                         }
+                                            
+                                        }
+                                       
                                     }label: {
                                         Text("회원가입").foregroundColor(.white).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20)).onTapGesture {
                                             goView = true

@@ -43,7 +43,7 @@ class CoreDataManager : ObservableObject {
                 print(error.localizedDescription)
             }
         }
-    
+    //로그인 시 user 정보 추가
     func add_user(user_id :String,access_token : String,refresh_token : String,nickname : String , content : NSManagedObjectContext){
         let user = User(context: content)
         user.user_id = user_id
@@ -61,49 +61,17 @@ class CoreDataManager : ObservableObject {
         save(content : content)
     }
     
-    //로그인
-    func login_user( user_id :String,access_token : String,refresh_token : String,nickname : String) -> User {
-        
-        if let entity = userEntity {
-                    let managedObject = NSManagedObject(entity: entity, insertInto: context)
-                    managedObject.setValue(user_id, forKey: "user_id")
-                    managedObject.setValue(access_token, forKey: "access_token")
-                    managedObject.setValue(refresh_token, forKey: "refresh_token")
-                    managedObject.setValue(nickname, forKey: "nickname")
-                }
-        
-//        save()
-        return User()
-        //        print("실행")
-        //        let user  = User(context: persistentContainer.viewContext)
-        //        print("user 1 : \(user)")
-        //        user.user_id = user_id
-        //        print("user 2 : \(user)")
-        //        user.access_token = access_token
-        //        print("user 3 : \(user)")
-        //        user.refresh_token = refresh_token
-        //        print("user 4 : \(user)")
-        //        user.nickname = nickname
-        //        do {print("실행")
-        //            try persistentContainer.viewContext.save()
-        ////            user.success = true
-        ////            get_user()
-        //        }catch{
-        //            print("Failed to save movie \(error)")
-        //        }
-        //        return user
-        //    }
-    }
     
-    func delete_user(user : User , content : NSManagedObjectContext){
+    // 로그아웃 시 로그인 정보 삭제
+    func delete_user( content : NSManagedObjectContext){
         
         do {
             let fetchResults = User.fetchRequest()
             let results = try content.fetch(fetchResults)
-            print("delete 중 ,,, : \(results.count)")
+//            print("delete 중 ,,, : \(results.count)")
             
             for result in results {
-                print("delete 중 ,,, : \(result.user_id)")
+//                print("delete 중 ,,, : \(result.user_id)")
                 content.delete(result)
                 let fetchResults = User.fetchRequest()
                 let results = try content.fetch(fetchResults)

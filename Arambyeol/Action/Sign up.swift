@@ -123,9 +123,10 @@ func check_pw(pw : String,check_pw : String) ->Bool{
 }
 
 //회원가입
-func goSignup(Info : Signup_info){
+func goSignup(Info : Signup_info) -> Bool {
+    var result_B = false
     guard let uploadData = try?JSONEncoder().encode(Info) else {
-        return
+        return result_B
     }
     let url = URL(string: "http://203.255.3.246:5004/member")
     var request = URLRequest(url: url!)
@@ -135,6 +136,7 @@ func goSignup(Info : Signup_info){
         
         // 서버가 응답이 없거나 통신이 실패
         if let e = error {
+            print("회원가입 error")
             NSLog("An error has occured: \(e.localizedDescription)")
             return
         }
@@ -142,11 +144,15 @@ func goSignup(Info : Signup_info){
           
           do {
               let Result: API_result = try JSONDecoder().decode(API_result.self, from: data)
+              print("회원가입 결과 : \(Result.result)")
               if Result.result == "success"{
                   print("성공? : ")
                   print(Result)
+                  result_B = true
               }else{
+                  print("회원가입 결과 : \(Result.result)")
                   print("실패")
+                  result_B = false
               }
               
           } catch let error {
@@ -157,6 +163,8 @@ func goSignup(Info : Signup_info){
         }else {return}
     }
     task.resume()
+    sleep(2)
+    return result_B
 }
 
 
