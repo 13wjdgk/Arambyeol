@@ -67,6 +67,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 }
 struct PostCreateView: View {
     
+//    @Binding var coreDM : CoreDataManager
     @State var star : Int
     @State var title : String = ""
     @State var content : String = ""
@@ -76,6 +77,9 @@ struct PostCreateView: View {
     @State var showSheet = false
     @State var cancel_sheet = false
     @State var image = UIImage()
+    //[user_id, access_token]
+    @Binding var user_info : [String]
+    @Binding var Create_view : Bool
     var body: some View {
         
             VStack{
@@ -149,11 +153,10 @@ struct PostCreateView: View {
                     HStack{
                         TextField("제목을 입력해주세요",text: $title)
                         Button{
-                            var Create_Post = Posting(image: image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
-, access_token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2MjE4NTg5MCwianRpIjoiMjg1ODQ0MjctODA0MS00MjUxLTk5OWUtYWFjY2U2Y2NmN2E0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InF3ZTEyMzQiLCJuYmYiOjE2NjIxODU4OTAsImV4cCI6MTY2MjI3MjI5MH0.NYcpcLTCeDVmuBNx--oWRZ7AkOo5liUVBzShe11bPJM", title: title, content:content, score: star, meal_time: meal_time, user_id: "13wjdgk@gnu.ac.kr")
-//                            var Create_Post = imagg(image: image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? "")
+                           //Post 업로드 과정 1. post 입력 데이터를 담은 add_Post() 객체 생성
+                            var Create_Post = add_Post(image: image.jpegData(compressionQuality: 1)?.base64EncodedString() ?? "", access_token: user_info[1], title: title, content:content, score: star, meal_time: meal_time, user_id: user_info[0])
                             goPosting(Post : Create_Post)
-                            
+                            Create_view = false
                         }label: {
                             Text("완료").background(RoundedRectangle(cornerRadius: 5).fill(.blue).frame(width: 50)).foregroundColor(.white)
                         }
@@ -234,6 +237,6 @@ struct PostCreateView: View {
 
 struct PostCreateView_Previews: PreviewProvider {
     static var previews: some View {
-        PostCreateView(star : 0)
+        PostCreateView( star : 0, user_info: .constant([""]), Create_view: .constant(true))
     }
 }

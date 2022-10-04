@@ -14,14 +14,15 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.user_id , order: .reverse)]) var usser : FetchedResults<User>
     // 로그인 유저 정보 저장 CoreData
     @State var user : User
-//    
+    @Binding var MENULIST : [menu_day]
+   
     var body: some View {
         TabView{
-            MainSwiftUIView().tabItem {
+            MainSwiftUIView(MENULIST : $MENULIST).tabItem {
                 Image(systemName: "house")
                 Text("Main")
             }
-            PostView().tabItem {
+            PostView(coreDM: $coreDM).tabItem {
                 Image(systemName: "house")
                 Text("Main")
             }
@@ -35,6 +36,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView( user: User())
+        ContentView( user: User(), MENULIST: .constant([]))
     }
 }

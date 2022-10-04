@@ -203,7 +203,7 @@
 				A6634CBB28C49C7900A4C328 /* Manager */,
 				A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */,
 				A6634CAD28C362A600A4C328 /* Data */,
-				A6FA834228C1E7C9001EF7FC /* Action */,
+				A6FA834228C1E7C9001EF7FC /* API Action */,
 				A6D4419C28927EBE0084AF8A /* Assets.xcassets */,
 				A6D441A128927EBE0084AF8A /* Persistence.swift */,
 				A66F2BB92896BC1A00C6AB3E /* ContentView.swift */,
@@ -242,7 +242,7 @@
 			path = ArambyeolUITests;
 			sourceTree = "<group>";
 		};
-		A6FA834228C1E7C9001EF7FC /* Action */ = {
+		A6FA834228C1E7C9001EF7FC /* API Action */ = {
 			isa = PBXGroup;
 			children = (
 				A6FA834328C1EE80001EF7FC /* Sign up.swift */,
@@ -250,7 +250,7 @@
 				A6634CA928C3623C00A4C328 /* Menu.swift */,
 				A6634CAB28C3625200A4C328 /* Post.swift */,
 			);
-			path = Action;
+			path = "API Action";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

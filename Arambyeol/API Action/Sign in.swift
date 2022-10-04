@@ -15,7 +15,7 @@ func login (login : Login , token : inout [String]) -> Int {
     guard let uploadData = try?JSONEncoder().encode(login) else {
         return -1
     }
-    let url = URL(string: "http://203.255.3.246:5004/login/app")
+    let url = URL(string: "http://43.201.37.66:5000/login/app")
     var request = URLRequest(url: url!)
     request.httpMethod = "Post"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -65,7 +65,7 @@ func changeNickname(user : User , newNickname : String) -> Bool {
     print( user.access_token!)
     var result_B = false
     guard let uploadData = try?JSONEncoder().encode(change_nickname(access_token: user.access_token! , user_id: user.user_id!, nickname: newNickname)) else {return false}
-    let url = URL(string: "http://203.255.3.246:5004/member/nickname")
+    let url = URL(string: "http://43.201.37.66:5000/member/nickname")
     var request = URLRequest(url: url!)
     request.httpMethod = "Put"
     request.httpBody = uploadData

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 //coreData 대신
 
 
@@ -24,31 +25,65 @@ class certifiaction_mail : ObservableObject {
 }
 //Post
 class Post : Identifiable,ObservableObject{
-    let id : UUID //Identifiable에 필요한 속성
-    let post_id : Int
-    @Published var title : String
-    @Published var category : String
-    let nickname : String
-    let score : Int
-    let insertDate : Date
-    init(post_id : Int,title : String,category : String,nickname : String,score : Int,insertDate : Date){
-        id = UUID()
+    var id = UUID()
+//    var content : String
+//    var date : String
+    var image : UIImage
+//    var like : Int
+    var meal_time : String
+    var post_id : Int
+    var score : Int
+    var title : String
+    var nickname : String
+    init(image : UIImage?,  meal_time : String, post_id : Int, score : Int, title : String, nickname : String){
+//        self.content  = content
+//        self.date = date
+        self.image = image ?? UIImage()
+//        self.like = like
+        self.meal_time = meal_time
         self.post_id = post_id
-        self.title = title
-        self.category = category
-        self.nickname = nickname
         self.score = score
-        self.insertDate = insertDate
-        
+        self.title = title
+        self.nickname = nickname
     }
-    
+}
+//메뉴 세부 정보
+class menu_info: Identifiable {
+    var id: Int {
+        self.menu_id
+    }
+    var menu_id : Int
+    var menu_name : String
+    var score : Float
+    var course : String
+    init(menu_id : Int,menu_name : String,score : Float,course : String){
+        self.menu_id = menu_id
+        self.menu_name = menu_name
+        self.score = score
+        self.course = course
+    }
+}
+class menu_course: Identifiable {
+    var id = UUID()
+    var courseList : [menu_info] = []
+}
+//하루치 메뉴
+class menu_day{
+    var morning : [menu_course] = []
+    var lunch : [menu_course] = []
+    var dinner : [menu_course] = []
 }
 
+//메뉴 전체 목록
+class MenuList{
+    var Mon : [menu_day] = []
+    var Tue : [menu_day] = []
+    var Wed : [menu_day] = []
+    var Thu : [menu_day] = []
+    var Fri : [menu_day] = []
+    var Sat : [menu_day] = []
+    var Sun : [menu_day] = []
+}
 
-var PostList : [Post] = [Post(post_id: 1, title: "오늘 아람 존맛탱", category: "오늘의 아람 후기", nickname:"dongg", score: 5, insertDate: Date.now),Post(post_id: 2, title: "오늘 아람 머리카락 나옴 ㅠㅠ", category: "아람 문의 / 건의", nickname:"dongg222", score: -1, insertDate: Date.now)
-                        ,Post(post_id: 3, title: "도스마스 배달시킬 사람", category: "아람이 맛없을 땐?", nickname:"dongg44", score: -1, insertDate: Date.now),Post(post_id: 1, title: "오늘 아람 존맛탱", category: "오늘의 아람 후기", nickname:"dongg", score: 5, insertDate: Date.now),Post(post_id: 2, title: "오늘 아람 머리카락 나옴 ㅠㅠ", category: "아람 문의 / 건의", nickname:"dongg222", score: -1, insertDate: Date.now)
-                         ,Post(post_id: 3, title: "도스마스 배달시킬 사람", category: "아람이 맛없을 땐?", nickname:"dongg44", score: -1, insertDate: Date.now),Post(post_id: 2, title: "오늘 아람 머리카락 나옴 ㅠㅠ", category: "아람 문의 / 건의", nickname:"dongg222", score: -1, insertDate: Date.now)
-                         ,Post(post_id: 3, title: "도스마스 배달시킬 사람", category: "아람이 맛없을 땐?", nickname:"dongg44", score: -1, insertDate: Date.now),Post(post_id: 1, title: "오늘 아람 존맛탱", category: "오늘의 아람 후기", nickname:"dongg", score: 5, insertDate: Date.now),Post(post_id: 2, title: "오늘 아람 머리카락 나옴 ㅠㅠ", category: "아람 문의 / 건의", nickname:"dongg222", score: -1, insertDate: Date.now)
-                          ,Post(post_id: 3, title: "도스마스 배달시킬 사람", category: "아람이 맛없을 땐?", nickname:"dongg44", score: -1, insertDate: Date.now),Post(post_id: 2, title: "오늘 아람 머리카락 나옴 ㅠㅠ", category: "아람 문의 / 건의", nickname:"dongg222", score: -1, insertDate: Date.now)
-                        ]
+var PostList : [Post] = []
 

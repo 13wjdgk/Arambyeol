@@ -14,11 +14,12 @@ struct ArambyeolApp: App {
     @StateObject private var userController = CoreDataManager()
     //앱이 시작될 때 한 번 저장소를 생성한 다음 SwiftUI 환경 내에 저장한다. 모든 곳에서 사용할 수 있다.
     @Environment(\.scenePhase) var scenePhase
+    @State var MENULIST = getMenu()
     
     var body: some Scene {
         WindowGroup {
             //ContentView() 줄에 새 수정자를 추가하여 SwiftUI 환경에 배치할 수 있다.
-            ContentView(user: User())
+            ContentView(user: User(),MENULIST : $MENULIST)
                 .environment(\.managedObjectContext, userController.persistentContainer.viewContext)
         }
 

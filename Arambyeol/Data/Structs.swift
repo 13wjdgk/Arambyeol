@@ -64,8 +64,8 @@ struct API_result : Codable {
 
 
 
-// post
-struct Posting : Codable{
+// post 업로드시 필요 struct
+struct add_Post : Codable{
     let image : String
     let access_token : String
     let title : String
@@ -83,49 +83,74 @@ struct Posting : Codable{
         case user_id
     }
 }
+// post load시 받을 struct
+struct get_post : Codable {
+//    let content : String
+//    let date : String
+    let image : String?
+//    let like : Int
+    let meal_time : String
+    let post_id : Int
+    let score : Int
+    let title : String
+    let nickname : String
+}
+// post load시 받을 struct
+struct get_Posts : Codable{
+    var result : [get_post]
+    
+    enum CodingKeys : String, CodingKey{
+        case result = "result"
+    }
+    
+}
+
+struct go_get_Post :Codable{
+    var access_token : String
+    var times : Int
+}
 
 struct delete_Post : Codable{
     let access_toke : String
     let post_id : Int
 }
+struct like_Post : Codable{
+    let access_token : String
+    let post_id : Int
+    let status : String
+}
+
+// post load시 받을 struct
+struct get_menu : Codable {
+    let menu_id : Int
+    let menu : String
+    let score : Float
+    let course : String
+}
+// post load시 받을 struct
+struct day_menu : Codable {
+        var morning : [get_menu]
+        let lunch : [get_menu]
+        let dinner : [get_menu]
+}
+// post load시 받을 struct
+struct get_Menus : Codable{
+    let 월 : day_menu
+    let 화 : day_menu
+    let 수 : day_menu
+    let 목 : day_menu
+    let 금 : day_menu
+    let 토 : day_menu
+    let 일 : day_menu
+
+    
+}
+
+
+
 
 //Menu
 struct Menu : Codable{
-  
-    struct 월 {
-        var morning : String
-        let lunch : String
-        let dinner : String
-    }
-    struct 화 {
-        let morning : String
-            let lunch : String
-            let dinner : String
-    }
-    struct 수{
-        let morning : String
-            let lunch : String
-            let dinner : String
-    }
-    struct 목 {
-        let morning : String
-            let lunch : String
-            let dinner : String
-    }
-    struct 금 {
-        let morning : String
-            let lunch : String
-            let dinner : String
-    }
-    struct 토 {
-        let morning : String
-            let lunch : String
-            let dinner : String
-    }
-    struct 일 {
-        let morning : String
-        let lunch : String
-        let dinner : String
-    }
+ 
     
 }

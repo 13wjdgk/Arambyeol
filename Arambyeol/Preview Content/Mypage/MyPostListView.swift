@@ -12,7 +12,7 @@ struct MyPostListView: View {
                 List{
                     ForEach(PostList){ post in
                         NavigationLink {
-                           PostDetailView()
+                            PostDetailView(post: Post(image: UIImage(), meal_time: "", post_id: 0, score: 0, title: "", nickname: ""), access_token: "")
                         }label: {
                             PostCell(post: post).listRowBackground(Color.white)
                         }

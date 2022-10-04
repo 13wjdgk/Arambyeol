@@ -34,6 +34,10 @@ class CoreDataManager : ObservableObject {
        var userEntity: NSEntityDescription? {
            return  NSEntityDescription.entity(forEntityName: "User", in: context)
        }
+    //NSEntityDescription : Core Data의 entity 대한 설명
+        var postEntity: NSEntityDescription? {
+            return  NSEntityDescription.entity(forEntityName: "Post", in: context)
+        }
     
     //저장
     func save(content : NSManagedObjectContext) {
@@ -134,8 +138,17 @@ class CoreDataManager : ObservableObject {
             }
             save(content: content)
         }
+    //post 정보 저장
+
     
 }
+
+
+
+
+
+
+
 //
 
 

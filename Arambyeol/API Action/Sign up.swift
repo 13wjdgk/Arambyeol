@@ -13,7 +13,7 @@ import SwiftUI
 func SendMail(email : String){
     let mail = Mail(mail: "\(email)@gnu.ac.kr")
     guard let SendMail = try? JSONEncoder().encode(mail) else {print("err0r 01"); return }
-    let url = URL(string: "http://203.255.3.246:5004/member/mail")
+    let url = URL(string: "http://43.201.37.66:5000/member/mail")
     var request = URLRequest(url: url!)
     request.httpMethod = "Post"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -33,7 +33,7 @@ func SendMail(email : String){
 func CheckNumber(input_Signup :  certifiaction_mail ) -> String {
     let mail = CertificationNumber(mail: "\(input_Signup.mail)@gnu.ac.kr",number: input_Signup.number)
     guard let uploadData = try? JSONEncoder().encode(mail) else {print("err0r 01"); return "" }
-    let url = URL(string: "http://203.255.3.246:5004/member/mail/number")
+    let url = URL(string: "http://43.201.37.66:5000/member/mail/number")
     var request = URLRequest(url: url!)
     request.httpMethod = "Post"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -70,7 +70,7 @@ func CheckNumber(input_Signup :  certifiaction_mail ) -> String {
 //닉네임 중복여부
 func check_nickname(nickname : String) -> String {
     var resResult = ""
-    var components = URLComponents(string: "http://203.255.3.246:5004/member/nickname")
+    var components = URLComponents(string: "http://43.201.37.66:5000/member/nickname")
     let nicknameValue = URLQueryItem(name: "nickname", value: "\(nickname)")
     components?.queryItems = [nicknameValue]
     let com_url = components?.url
@@ -128,7 +128,7 @@ func goSignup(Info : Signup_info) -> Bool {
     guard let uploadData = try?JSONEncoder().encode(Info) else {
         return result_B
     }
-    let url = URL(string: "http://203.255.3.246:5004/member")
+    let url = URL(string: "http://43.201.37.66:5000/member")
     var request = URLRequest(url: url!)
     request.httpMethod = "Post"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")

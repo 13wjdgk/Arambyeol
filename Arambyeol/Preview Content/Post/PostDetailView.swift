@@ -28,40 +28,78 @@ struct TextView: UIViewRepresentable {
         uiView.text = text
 //        uiView.font = UIFont.preferredFont(forTextStyle: textStyle)
     }
+    
+
 }
 
 struct PostDetailView: View {
+    var post : Post
     @State var content =  "오늘 아람이 메뉴 양꼬치 나왔는데 진짜 너무 맛있더라,,"
+    @State var like_b = Color.white
+    let access_token : String
+    //string 이미지 -> UIImage로 변환
+    func makeUIImage(base64 : String)->UIImage{
+        guard let base64String = URL(string: base64) else { return UIImage() }
+        
+//        let base64String = sourceData.base64EncodedString()
+
+        /// Convert base64-encoded String to UIImage
+        guard let sourceData = try? Data(contentsOf: base64String),
+              let uiImage = UIImage(data: sourceData) else {
+                  print("Error: couldn't create UIImage")
+                  return UIImage()
+              }
+        return uiImage
+    }
     var body: some View {
         GroupBox{
             VStack(alignment: .leading){
                 
-                Text("오늘 아람 맛있다 ~").font(.system(size: 20)).fontWeight(.semibold)
+                Text(post.title).font(.system(size: 20)).fontWeight(.semibold)
                 HStack{
-                    Text("파란코끼리").font(.system(size: 12))
+                    Text(post.nickname).font(.system(size: 12))
                     Text("|").font(.system(size: 12))
-                    Text("점심").font(.system(size: 12))
+                    Text(post.meal_time).font(.system(size: 12))
                     Text("|").font(.system(size: 12))
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("회색별").resizable().frame(width: 15, height: 15)
+                    ForEach(0..<post.score) { num in
+                        Image("노란별").resizable().frame(width: 15, height: 15)
+                                }
+                    ForEach(0..<5-post.score) { num in
+                        Image("회색별").resizable().frame(width: 15, height: 15)
+                                }
+                   
+                    
+                    
                 }
                 Divider()
-                Text(content).padding()
+//                Text(post.content).padding()
                 HStack{
                     Spacer()
-                    Image("머리").resizable().frame(width: 280, height: 280,alignment: .center)
+                    if post.image != UIImage() {
+                        Image(uiImage: post.image)
+//                        if let data = Data(base64Encoded: post.image), let uiImage = UIImage(data: data) {
+//                            Image(uiImage: uiImage)
+//                        } else {
+//                            Text(post.image)
+//                        }
+////                        Image(uiImage: makeUIImage(base64 : post.image ))
+                    }
+                    
                     Spacer()
                 }
                 HStack{
                     Button{
+                        if like_b == Color.blue {
+                            like_b = Color.white
+                        }else{
+                            like_b = Color.blue
+                            like_post(post_id: post.post_id, access_token: access_token, status: "plus")
+                        }
                         
                     }label: {
-                        Image(systemName: "hand.thumbsup.fill").padding().foregroundColor(.black)
+                        Image(systemName: "hand.thumbsup.fill").padding().foregroundColor(like_b)
                     }
-                    Text("16")
+//                    Text(String(post.like))
                     Button{
 //                        deletePost()
                     }label: {
@@ -78,6 +116,6 @@ struct PostDetailView: View {
 
 struct PostDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailView()
+        PostDetailView(post: Post(image: UIImage(), meal_time: "", post_id: 8, score: 0, title: "", nickname: ""), access_token: "")
     }
 }

@@ -15,17 +15,15 @@ struct PostCell: View {
                 
                 Text(post.title).font(.system(size: 15))
                 HStack{
-//                    Text("파란코끼리").font(.system(size: 12))
-//                    Text("|").font(.system(size: 12))
-                    Text("오늘의 점심").font(.system(size: 12))
-                    Text("|").font(.system(size: 12))
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("노란별").resizable().frame(width: 15, height: 15)
-                    Image("회색별").resizable().frame(width: 15, height: 15)
+
+                    ForEach(0..<post.score) { num in
+                        Image("노란별").resizable().frame(width: 15, height: 15)
+                                }
+                    ForEach(0..<5-post.score) { num in
+                        Image("회색별").resizable().frame(width: 15, height: 15)
+                                }
                     Spacer()
-                    Text("파란코끼리").font(.system(size: 12))
+                    Text(post.nickname).font(.system(size: 12))
                 }
         }
         }.padding()
@@ -35,6 +33,6 @@ struct PostCell: View {
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell(post: Post(post_id: 0, title: "Test", category: "카테고리", nickname: "nickname", score: 5, insertDate: Date.now))
+        PostCell(post: Post(image : UIImage(), meal_time : "", post_id : 9, score : 0, title : "", nickname : ""))
     }
 }
