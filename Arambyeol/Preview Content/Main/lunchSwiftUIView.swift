@@ -13,32 +13,42 @@
 import SwiftUI
 
 struct lunchSwiftUIView: View {
+    @Binding var lunch : [menu_course]
+    @State var height_size : CGFloat = 200
     var body: some View {
-        ZStack{
-//            Color.clear.edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("오늘의 점심").foregroundColor(.white).padding(EdgeInsets(top: 0, leading: 0, bottom: 7, trailing: 0))
-                GroupBox() {
-                    Group{
-                        Text("A코스 / 한식").foregroundColor(.yellow).fontWeight(.semibold).font(.system(size: 16)).padding(EdgeInsets(top: 10, leading: 0, bottom: 3, trailing: 0))
-                        Text("김치가츠나베").foregroundColor(.white).font(.system(size: 14))
-                        Text("우동국").foregroundColor(.white).font(.system(size: 14))
-                        Text("치킨").foregroundColor(.white).font(.system(size: 14))
-                        Text("흑임자샐러드").foregroundColor(.white).font(.system(size: 14))
-                        Text("배추김치").foregroundColor(.white).font(.system(size: 14))
-                        Text("아이스티").foregroundColor(.white).font(.system(size: 14))
+        VStack{
+            
+           
+            Text("# 점심")
+            Spacer().frame( height: 20)
+           ScrollView(){
+                
+                VStack {
+                    
+                    ForEach(lunch){ menu_course in
+                        Text("\(menu_course.courseList[0].course)").foregroundColor(.yellow).fontWeight(.semibold).font(.system(size: 16)).padding(EdgeInsets(top: 10, leading: 0, bottom: 3, trailing: 0))
+                        ForEach(menu_course.courseList){ menu in
+                            Text("\(menu.menu_name)").foregroundColor(.black).font(.system(size: 14))
+                        }
                     }
+                    
+                }
 
-
-                }.groupBoxStyle(CustomGroupBoxStyle())
-            }
-
+           }.onAppear(){
+               if lunch.count > 1 {
+                   height_size = 400
+               }else{
+                   height_size = 200
+               }
+           }.frame(width: 200, height: height_size).padding().background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(color: .init( red: 1, green: 0.76, blue: 0.42, opacity: 0.6), radius: 10,  x: 0, y: 0))
+           
         
         }
 
 
         }
     }
+
 
 
 
