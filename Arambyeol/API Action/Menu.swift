@@ -10,7 +10,8 @@ import Foundation
 
 
 
-func getMenu() -> [menu_day] {
+func getMenu( ) -> [menu_day] {
+    
     var Menu_list : [menu_day] = []
     var result_B = false
 
@@ -97,29 +98,29 @@ func getMenu() -> [menu_day] {
                       menu_day.dinner.append(course_list)
                       Menu_list.append(menu_day)
                   }
-//                  for Menu in Menu_list{
-//                      for mini in Menu.morning{
-//                          for info in mini.courseList{
-//                              print("\(info.course): \(info.menu_name)")
-//                          }
-//
-//                      }
-//                      print("------------------")
-//                      for mini in Menu.lunch{
-//                          for info in mini.courseList{
-//                              print("\(info.course): \(info.menu_name)")
-//                          }
-//
-//                      }
-//                      print("------------------")
-//                      for mini in Menu.dinner{
-//                          for info in mini.courseList{
-//                              print("\(info.course): \(info.menu_name)")
-//                          }
-//
-//                      }
-//                      print("==============================")
-//                  }
+                  for Menu in Menu_list{
+                      for mini in Menu.morning{
+                          for info in mini.courseList{
+                              print("\(info.course): \(info.menu_name)")
+                          }
+
+                      }
+                      print("------------------")
+                      for mini in Menu.lunch{
+                          for info in mini.courseList{
+                              print("\(info.course): \(info.menu_name)")
+                          }
+
+                      }
+                      print("------------------")
+                      for mini in Menu.dinner{
+                          for info in mini.courseList{
+                              print("\(info.course): \(info.menu_name)")
+                          }
+
+                      }
+                      print("==============================")
+                  }
 ////                  print("Menu_list ===============\(Menu_list)")
                  
  

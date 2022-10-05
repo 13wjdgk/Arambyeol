@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Menu_Info" representedClassName="Menu_Info" syncable="YES" codeGenerationType="class">
+        <attribute name="course" optional="YES" attributeType="String"/>
+        <attribute name="menu_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="menu_name" optional="YES" attributeType="String"/>
+        <attribute name="score" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Menu_table" representedClassName="Menu_table" syncable="YES" codeGenerationType="class">
+        <attribute name="course" optional="YES" attributeType="String"/>
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="meal_time" optional="YES" attributeType="String"/>
+        <attribute name="mt_id" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Posts" representedClassName="Posts" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -18,7 +30,9 @@
         <attribute name="user_id" attributeType="String"/>
     </entity>
     <elements>
+        <element name="Menu_table" positionX="18" positionY="144" width="128" height="89"/>
         <element name="Posts" positionX="-36" positionY="36" width="128" height="164"/>
         <element name="User" positionX="-36" positionY="9" width="128" height="89"/>
+        <element name="Menu_Info" positionX="-9" positionY="108" width="128" height="89"/>
     </elements>
 </model>
