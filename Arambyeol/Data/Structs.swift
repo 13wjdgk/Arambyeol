@@ -154,3 +154,17 @@ struct Menu : Codable{
  
     
 }
+struct FilterScope: Equatable {
+    var filter: String?
+    var predicate: NSPredicate? {
+        guard let filter = filter else { return nil }
+        return NSPredicate(format: "mt_id == %@", filter)
+    }
+}
+struct FilterScope_C: Equatable {
+    var filter: String?
+    var predicate: NSPredicate? {
+        guard let filter = filter else { return nil }
+        return NSPredicate(format: "mt_id == %@", filter)
+    }
+}

@@ -19,6 +19,12 @@
 		A6B0897428A1456F0093D627 /* exSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B0897328A1456F0093D627 /* exSwiftUIView.swift */; };
 		A6CB68CB28A3A30C0015B21C /* lunchSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB68CA28A3A30C0015B21C /* lunchSwiftUIView.swift */; };
 		A6CB68CD28A3A32D0015B21C /* dinnerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB68CC28A3A32D0015B21C /* dinnerSwiftUIView.swift */; };
+		A6CED3AE28F411C600592749 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CED38328F40B2F00592749 /* WidgetKit.framework */; };
+		A6CED3AF28F411C600592749 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CED38528F40B2F00592749 /* SwiftUI.framework */; };
+		A6CED3B228F411C600592749 /* Arambyeol_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CED3B128F411C600592749 /* Arambyeol_Widget.swift */; };
+		A6CED3B428F411C700592749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CED3B328F411C700592749 /* Assets.xcassets */; };
+		A6CED3B828F411C700592749 /* Arambyeol_WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A6CED3AD28F411C500592749 /* Arambyeol_WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A6CED3BD28F4157100592749 /* ShowMenuSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CED3BC28F4157100592749 /* ShowMenuSwiftUIView.swift */; };
 		A6D4419928927EBD0084AF8A /* ArambyeolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */; };
 		A6D4419D28927EBE0084AF8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D4419C28927EBE0084AF8A /* Assets.xcassets */; };
 		A6D441A028927EBE0084AF8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D4419F28927EBE0084AF8A /* Preview Assets.xcassets */; };
@@ -32,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A6CED3B628F411C700592749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6D4418D28927EBD0084AF8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6CED3AC28F411C500592749;
+			remoteInfo = Arambyeol_WidgetExtension;
+		};
 		A6D441AB28927EBE0084AF8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6D4418D28927EBD0084AF8A /* Project object */;
@@ -48,6 +61,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A6CED39328F40B2F00592749 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A6CED3B828F411C700592749 /* Arambyeol_WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A6634CA528C361C400A4C328 /* Sign in.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sign in.swift"; sourceTree = "<group>"; };
 		A6634CA928C3623C00A4C328 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -61,6 +88,15 @@
 		A6B0897328A1456F0093D627 /* exSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exSwiftUIView.swift; sourceTree = "<group>"; };
 		A6CB68CA28A3A30C0015B21C /* lunchSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lunchSwiftUIView.swift; sourceTree = "<group>"; };
 		A6CB68CC28A3A32D0015B21C /* dinnerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinnerSwiftUIView.swift; sourceTree = "<group>"; };
+		A6CED38328F40B2F00592749 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A6CED38528F40B2F00592749 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A6CED3AD28F411C500592749 /* Arambyeol_WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Arambyeol_WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CED3B128F411C600592749 /* Arambyeol_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arambyeol_Widget.swift; sourceTree = "<group>"; };
+		A6CED3B328F411C700592749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6CED3B528F411C700592749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6CED3BC28F4157100592749 /* ShowMenuSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMenuSwiftUIView.swift; sourceTree = "<group>"; };
+		A6CED3BE28F416CE00592749 /* Arambyeol_WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arambyeol_WidgetExtension.entitlements; sourceTree = "<group>"; };
+		A6CED3BF28F416FC00592749 /* Arambyeol.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arambyeol.entitlements; sourceTree = "<group>"; };
 		A6D4419528927EBD0084AF8A /* Arambyeol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arambyeol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArambyeolApp.swift; sourceTree = "<group>"; };
 		A6D4419C28927EBE0084AF8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +113,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A6CED3AA28F411C500592749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CED3AF28F411C600592749 /* SwiftUI.framework in Frameworks */,
+				A6CED3AE28F411C600592749 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6D4419228927EBD0084AF8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,13 +167,36 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		A6CED38228F40B2F00592749 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6CED38328F40B2F00592749 /* WidgetKit.framework */,
+				A6CED38528F40B2F00592749 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6CED3B028F411C600592749 /* Arambyeol_Widget */ = {
+			isa = PBXGroup;
+			children = (
+				A6CED3B128F411C600592749 /* Arambyeol_Widget.swift */,
+				A6CED3B328F411C700592749 /* Assets.xcassets */,
+				A6CED3B528F411C700592749 /* Info.plist */,
+				A6CED3BC28F4157100592749 /* ShowMenuSwiftUIView.swift */,
+			);
+			path = Arambyeol_Widget;
+			sourceTree = "<group>";
+		};
 		A6D4418C28927EBD0084AF8A = {
 			isa = PBXGroup;
 			children = (
+				A6CED3BE28F416CE00592749 /* Arambyeol_WidgetExtension.entitlements */,
 				A6634CB828C49AE100A4C328 /* Arambyeol.xcdatamodeld */,
 				A6D4419728927EBD0084AF8A /* Arambyeol */,
 				A6D441AD28927EBE0084AF8A /* ArambyeolTests */,
 				A6D441B728927EBE0084AF8A /* ArambyeolUITests */,
+				A6CED3B028F411C600592749 /* Arambyeol_Widget */,
+				A6CED38228F40B2F00592749 /* Frameworks */,
 				A6D4419628927EBD0084AF8A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,6 +207,7 @@
 				A6D4419528927EBD0084AF8A /* Arambyeol.app */,
 				A6D441AA28927EBE0084AF8A /* ArambyeolTests.xctest */,
 				A6D441B428927EBE0084AF8A /* ArambyeolUITests.xctest */,
+				A6CED3AD28F411C500592749 /* Arambyeol_WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +215,7 @@
 		A6D4419728927EBD0084AF8A /* Arambyeol */ = {
 			isa = PBXGroup;
 			children = (
+				A6CED3BF28F416FC00592749 /* Arambyeol.entitlements */,
 				A6D4419828927EBD0084AF8A /* ArambyeolApp.swift */,
 				A6634CAD28C362A600A4C328 /* Data */,
 				A6FA834228C1E7C9001EF7FC /* API Action */,
@@ -199,6 +269,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A6CED3AC28F411C500592749 /* Arambyeol_WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CED3B928F411C700592749 /* Build configuration list for PBXNativeTarget "Arambyeol_WidgetExtension" */;
+			buildPhases = (
+				A6CED3A928F411C500592749 /* Sources */,
+				A6CED3AA28F411C500592749 /* Frameworks */,
+				A6CED3AB28F411C500592749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arambyeol_WidgetExtension;
+			productName = Arambyeol_WidgetExtension;
+			productReference = A6CED3AD28F411C500592749 /* Arambyeol_WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A6D4419428927EBD0084AF8A /* Arambyeol */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6D441BE28927EBE0084AF8A /* Build configuration list for PBXNativeTarget "Arambyeol" */;
@@ -206,10 +293,12 @@
 				A6D4419128927EBD0084AF8A /* Sources */,
 				A6D4419228927EBD0084AF8A /* Frameworks */,
 				A6D4419328927EBD0084AF8A /* Resources */,
+				A6CED39328F40B2F00592749 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A6CED3B728F411C700592749 /* PBXTargetDependency */,
 			);
 			name = Arambyeol;
 			packageProductDependencies = (
@@ -264,6 +353,9 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					A6CED3AC28F411C500592749 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
 					A6D4419428927EBD0084AF8A = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -295,11 +387,20 @@
 				A6D4419428927EBD0084AF8A /* Arambyeol */,
 				A6D441A928927EBE0084AF8A /* ArambyeolTests */,
 				A6D441B328927EBE0084AF8A /* ArambyeolUITests */,
+				A6CED3AC28F411C500592749 /* Arambyeol_WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A6CED3AB28F411C500592749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CED3B428F411C700592749 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6D4419328927EBD0084AF8A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +427,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A6CED3A928F411C500592749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CED3B228F411C600592749 /* Arambyeol_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6D4419128927EBD0084AF8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +455,7 @@
 				A6634CAF28C362F600A4C328 /* Structs.swift in Sources */,
 				A66F2BC02896CB2F00C6AB3E /* breakfastView.swift in Sources */,
 				A6D4419928927EBD0084AF8A /* ArambyeolApp.swift in Sources */,
+				A6CED3BD28F4157100592749 /* ShowMenuSwiftUIView.swift in Sources */,
 				A6D441C8289283030084AF8A /* MainSwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +480,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A6CED3B728F411C700592749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6CED3AC28F411C500592749 /* Arambyeol_WidgetExtension */;
+			targetProxy = A6CED3B628F411C700592749 /* PBXContainerItemProxy */;
+		};
 		A6D441AC28927EBE0084AF8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A6D4419428927EBD0084AF8A /* Arambyeol */;
@@ -383,6 +498,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A6CED3BA28F411C700592749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Arambyeol_WidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XTZ6W4677Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Arambyeol_Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Arambyeol_Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "programminglanguage.Arambyeol.Arambyeol-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6CED3BB28F411C700592749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Arambyeol_WidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XTZ6W4677Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Arambyeol_Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Arambyeol_Widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "programminglanguage.Arambyeol.Arambyeol-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A6D441BC28927EBE0084AF8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -500,8 +671,10 @@
 		A6D441BF28927EBE0084AF8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arambyeol/Arambyeol.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Arambyeol/Preview Content\"";
@@ -529,8 +702,10 @@
 		A6D441C028927EBE0084AF8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arambyeol/Arambyeol.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Arambyeol/Preview Content\"";
@@ -634,6 +809,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A6CED3B928F411C700592749 /* Build configuration list for PBXNativeTarget "Arambyeol_WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CED3BA28F411C700592749 /* Debug */,
+				A6CED3BB28F411C700592749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A6D4419028927EBD0084AF8A /* Build configuration list for PBXProject "Arambyeol" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

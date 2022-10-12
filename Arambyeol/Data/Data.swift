@@ -87,3 +87,8 @@ class MenuList{
 
 var PostList : [Post] = []
 var MENULIST : [menu_day] = getMenu()
+
+
+
+//var aaaa : [menu_info] = []
+
